@@ -287,16 +287,16 @@ img {
   display: flex;
   justify-content: space-between;
   margin-left: 1rem;
-  min-width: 500px;
+  min-width: 450px;
 }
 .teammate2 {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
   margin-left: 1rem;
-  min-width: 500px;
+  min-width: 450px;
 }
-@media (min-width: 1020px) {
+@media (min-width: 934px) {
   .teammate2 {
     flex-direction: row;
   }
@@ -306,16 +306,14 @@ img {
 }
 .mate-name {
   font-size: 2rem;
-  margin: 3.4rem 1.5rem 1.1rem;
+  padding: 2.6rem 0;
 }
 .mate-role {
   font-size: 1.6rem;
-  margin-left: 1.5rem;
 }
 .mate-quote {
   font-size: 1.5rem;
-  max-width: 30rem;
-  margin-left: 1.5rem;
+  max-width: 24rem;
 }
 .mate-portrait {
   width: 182px;
