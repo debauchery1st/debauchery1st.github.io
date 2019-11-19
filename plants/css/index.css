@@ -199,7 +199,7 @@ img {
 .banner {
   background-color: #235B2D;
   color: #E5E5E5;
-  padding: 2% 0;
+  padding: 1rem;
 }
 .btn1 {
   color: #E5E5E5;
@@ -207,11 +207,12 @@ img {
   border: 1px solid #235B2D;
   width: 42rem;
   text-align: center;
-  padding: 4%;
-  margin: 2% 0;
+  padding: 1rem;
+  margin: 2rem 0;
   font-size: 1.4rem;
   font-weight: bold;
   background-color: #235B2D;
+  margin-top: 2rem;
 }
 .btn1:hover {
   background-color: #E5E5E5;
@@ -224,8 +225,8 @@ img {
   border: 1px solid #235B2D;
   width: 42rem;
   text-align: center;
-  padding: 4%;
-  margin: 2% 0;
+  padding: 1rem;
+  margin: 2rem 0;
   font-size: 1.4rem;
   font-weight: bold;
   background-color: white;
@@ -238,15 +239,16 @@ img {
 .hero,
 .heroImg {
   transition-property: background-image;
+  margin-bottom: 2rem;
   transition-duration: 1.5s;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("../img/bg3.jpg");
+  background-image: url("../img/bg1.jpg");
   /* The image used */
   background-color: #cccccc;
   /* Used if the image is unavailable */
-  height: 420px;
+  height: 320px;
   /* You must set a specified height */
   background-position: center;
   /* Center the image */
@@ -277,7 +279,47 @@ img {
 .about {
   min-height: 500px;
 }
-.member-portrait {
+.dev-team {
+  display: flex;
+  flex-wrap: wrap;
+}
+.teammate1 {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 1rem;
+  min-width: 500px;
+}
+.teammate2 {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin-left: 1rem;
+  min-width: 500px;
+}
+@media (min-width: 1020px) {
+  .teammate2 {
+    flex-direction: row;
+  }
+}
+.mate-img {
+  margin: 1.5rem 0.5rem;
+}
+.mate-name {
+  font-size: 2rem;
+  margin: 3.4rem 1.5rem 1.1rem;
+}
+.mate-role {
+  font-size: 1.6rem;
+  margin-left: 1.5rem;
+}
+.mate-quote {
+  font-size: 1.5rem;
+  max-width: 30rem;
+  margin-left: 1.5rem;
+}
+.mate-portrait {
   width: 182px;
   height: 182px;
+  border: 0.2rem solid #235B2D;
+  border-radius: 0.5rem;
 }
