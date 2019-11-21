@@ -182,7 +182,7 @@ img {
   justify-content: space-between;
   align-items: center;
 }
-@media (min-width: 500px) {
+@media (min-width: 50px) {
   .header nav {
     flex-direction: column;
   }
@@ -285,56 +285,209 @@ body {
   margin: 2%;
 }
 .about {
-  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  min-height: 40rem;
+  width: 100%;
 }
 .about h2 {
-  padding: 2rem;
+  margin: 1rem;
+  padding: 0.5rem;
   font-size: 2.6rem;
   font-weight: bold;
 }
 .dev-team {
   display: flex;
   flex-wrap: wrap;
-}
-.teammate1 {
-  display: flex;
   justify-content: space-between;
-  margin-left: 1rem;
-  min-width: 400px;
+  max-width: 120rem;
 }
-.teammate2 {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  margin-left: 1rem;
-  min-width: 400px;
-}
-.teammate2 .mate-img {
-  margin-left: 1.1rem;
-}
-@media (min-width: 934px) {
-  .teammate2 {
-    flex-direction: row;
+@media (min-width: 320px) {
+  .dev-team {
+    width: 100%;
+    width: 95%;
   }
 }
-.mate-img {
-  margin: 1.5rem 0.5rem;
-  margin-right: 1.1rem;
+@media (min-width: 360px) {
+  .dev-team {
+    justify-content: center;
+  }
 }
-.mate-name {
-  font-size: 2rem;
-  padding: 2.6rem 0;
+.mate-img img {
+  width: 5rem;
+  height: 5rem;
+  margin: 1rem;
+  border: 0.2rem solid #235B2D;
+  border-radius: 0.5rem;
+}
+@media (min-width: 320px) {
+  .mate-img img {
+    width: 14rem;
+    height: 14rem;
+  }
+}
+@media (min-width: 360px) {
+  .mate-img img {
+    width: 14rem;
+    height: 14rem;
+  }
+}
+@media (min-width: 375px) {
+  .mate-img img {
+    width: 14.5rem;
+    height: 14.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .mate-img img {
+    width: 15rem;
+    height: 15rem;
+  }
+}
+.mate-text {
+  display: block;
+  padding-top: 2rem;
+  width: 50%;
 }
 .mate-role {
   font-size: 1.6rem;
 }
 .mate-quote {
-  font-size: 1.5rem;
-  max-width: 24rem;
+  font-size: 1.35rem;
 }
-.mate-portrait {
-  width: 182px;
-  height: 182px;
-  border: 0.2rem solid #235B2D;
-  border-radius: 0.5rem;
+.mate-name {
+  font-size: 2rem;
+}
+.teammate1 {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  max-width: 60rem;
+}
+@media (min-width: 320px) {
+  .teammate1 {
+    justify-content: space-evenly;
+  }
+  .teammate1 .mate-img img {
+    width: 12rem;
+    height: 12rem;
+  }
+  .teammate1 .mate-quote {
+    font-size: 1.25rem;
+  }
+  .teammate1 .mate-name {
+    font-size: 1.8rem;
+  }
+  .teammate1 .mate-role {
+    font-size: 1.4rem;
+  }
+  .teammate1 .mate-text {
+    margin-left: 10px;
+  }
+}
+@media (min-width: 768px) {
+  .teammate1 {
+    width: 30%;
+  }
+}
+@media (min-width:664px) {
+  .teammate1 {
+    width: 50%;
+    max-width: 80rem;
+  }
+  .teammate1 .mate-img img {
+    width: 17.5rem;
+    height: 17.5rem;
+  }
+  .teammate1 .mate-quote {
+    font-size: 1.5rem;
+  }
+  .teammate1 .mate-name {
+    font-size: 1.8rem;
+  }
+  .teammate1 .mate-role {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .teammate1 .mate-img img {
+    width: 18.2rem;
+    height: 18.2rem;
+  }
+  .teammate1 .mate-quote {
+    font-size: 1.6rem;
+  }
+  .teammate1 .mate-name {
+    font-size: 2rem;
+  }
+  .teammate1 .mate-role {
+    font-size: 1.6rem;
+  }
+}
+.teammate2 {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 95%;
+  justify-content: space-evenly;
+}
+@media (min-width: 320px) {
+  .teammate2 .mate-img img {
+    width: 12rem;
+    height: 12rem;
+  }
+  .teammate2 .mate-quote {
+    font-size: 1.25rem;
+  }
+  .teammate2 .mate-name {
+    font-size: 1.8rem;
+  }
+  .teammate2 .mate-role {
+    font-size: 1.4rem;
+  }
+  .teammate2 .mate-text {
+    margin-left: 20px;
+  }
+}
+@media (min-width: 375px) {
+  .teammate2 .mate-text {
+    margin-left: 10px;
+    justify-content: space-between;
+  }
+  .teammate2 .mate-img img {
+    margin-left: 10px;
+  }
+}
+@media (min-width:664px) {
+  .teammate2 {
+    width: 50%;
+    flex-direction: row;
+  }
+  .teammate2 .mate-img img {
+    width: 17.5rem;
+    height: 17.5rem;
+  }
+  .teammate2 .mate-quote {
+    font-size: 1.5rem;
+  }
+  .teammate2 .mate-name {
+    font-size: 1.8rem;
+  }
+  .teammate2 .mate-role {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .teammate2 .mate-img img {
+    width: 18.2rem;
+    height: 18.2rem;
+  }
+  .teammate2 .mate-quote {
+    font-size: 1.6rem;
+  }
+  .teammate2 .mate-name {
+    font-size: 2rem;
+  }
+  .teammate2 .mate-role {
+    font-size: 1.6rem;
+  }
 }
