@@ -1,0 +1,29 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.container header,
+footer {
+  background: darkslategrey;
+  padding: 1.1rem;
+}
+.container .body-content {
+  min-height: 36rem;
+  height: auto;
+  border: 2px solid black;
+  padding: 1.1rem;
+}
+h1 {
+  font-size: 2.4rem;
+}
+p {
+  font-size: 1.6rem;
+}
+a {
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+}

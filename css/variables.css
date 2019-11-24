@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'Calistoga';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Calistoga Regular'), local('Calistoga-Regular'), url(https://fonts.gstatic.com/s/calistoga/v1/6NUU8F2OJg6MeR7l4e0fs8wE.ttf) format('truetype');
+}
