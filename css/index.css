@@ -167,10 +167,24 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #999999;
 }
+.header {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.footer {
+  display: flex;
+  flex-flow: row-reverse;
+  width: 100%;
+  color: #f2f2f2;
+}
+.footer h5 {
+  padding: 2rem;
+}
 .header,
 .footer {
   background: rgba(0, 1, 1, 0.6);
-  padding: 2rem;
+  padding: 1rem;
   opacity: 77%;
 }
 .footer {
@@ -181,6 +195,23 @@ body {
 body {
   background-image: url("../images/becca-romine-Lll4QeybDEg-unsplash.jpg");
 }
+.oc {
+  src: url("../images/octocat.png");
+  width: 16px;
+  height: 16px;
+}
+@media (min-width: 375px) {
+  .oc {
+    width: 32px;
+    height: 32px;
+  }
+}
+@media (min-width: 411px) {
+  .oc {
+    width: 64px;
+    height: 64px;
+  }
+}
 .body-content {
   opacity: 100%;
   padding: 2rem;
@@ -189,8 +220,7 @@ body {
   overflow-y: auto;
   top: 5rem;
   bottom: 5rem;
-  width: 95%;
-  margin: 2%;
+  margin: 3rem;
   background-color: rgba(0, 1, 1, 0.6);
   border-radius: 1rem;
   scrollbar-color: #000101;
@@ -198,6 +228,9 @@ body {
 h1 {
   font-size: 2.4rem;
   padding: 1rem 0;
+}
+h2 {
+  color: #f2f2f2;
 }
 p {
   font-size: 1.6rem;
