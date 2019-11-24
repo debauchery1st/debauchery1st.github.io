@@ -169,8 +169,9 @@ body {
 }
 .header,
 .footer {
-  background: darkslategrey;
+  background: rgba(0, 1, 1, 0.6);
   padding: 2rem;
+  opacity: 77%;
 }
 .footer {
   bottom: 0;
@@ -205,4 +206,5 @@ p {
 a {
   font-size: 1.2rem;
   letter-spacing: 0.2rem;
+  padding-left: 1.5rem;
 }
