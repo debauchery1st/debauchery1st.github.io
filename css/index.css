@@ -221,6 +221,7 @@ body {
   right: 2%;
   background-color: rgba(0, 1, 1, 0.6);
   border-radius: 1rem;
+  border: 1px solid rgba(0, 1, 1, 0.6);
   scrollbar-color: #000101;
 }
 .body-content h1 {
