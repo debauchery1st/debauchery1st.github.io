@@ -182,6 +182,7 @@ body {
   background-image: url("../images/becca-romine-Lll4QeybDEg-unsplash.jpg");
 }
 .body-content {
+  opacity: 100%;
   padding: 2rem;
   color: #f2f2f2;
   position: absolute;
