@@ -218,9 +218,10 @@ body {
   color: #f2f2f2;
   position: absolute;
   overflow-y: auto;
-  top: 5rem;
-  bottom: 5rem;
-  margin: 3rem;
+  top: 11%;
+  bottom: 5%;
+  left: 2%;
+  right: 2%;
   background-color: rgba(0, 1, 1, 0.6);
   border-radius: 1rem;
   scrollbar-color: #000101;
