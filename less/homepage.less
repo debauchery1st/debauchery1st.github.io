@@ -8,10 +8,13 @@
     bottom: 0;
     position: absolute;
     width: 100%;
+    overflow: hidden;
 }
 
 body {
     background-image: @background-img;
+    display: flex;
+    flex-direction: column;
 }
 
 .oc {
@@ -35,26 +38,49 @@ body {
     position: absolute;
     overflow-y:auto;
     top: 11%;
-    bottom: 5%;
+    bottom: 2%;
     left: 2%;
     right: 2%;
-    // margin: 3rem;
-    background-color: @dark-glass;
+    h1 {
+        padding: 1.5rem;
+    }
+    @media @iphonex {
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        padding: 1rem 0;
+    }
+    @media @ipad {
+        font-size: 1.6rem;
+        line-height: 1.8rem;
+    }
+
+    background-color: @dark-glass; 
     border-radius: 1rem;
     scrollbar-color: @dark;
+    p {
+        padding: 1.5rem;
+    }
 }   
 
 h1 {
-    font-size: 2.4rem;
-    padding: 1rem 0;
+    font-size: 2rem;
+    color: @white;
 }
 h2 {
     color: @white;
 }
 p {
-    font-size: 1.6rem;
-    line-height: 1.8rem;
     padding: 1rem 0;
+    @media @iphonex {
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        padding: 1rem 0;
+    }
+    @media @ipad {
+        font-size: 1.6rem;
+        line-height: 1.8rem;
+    }
+
 }
 
 a {
