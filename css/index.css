@@ -179,7 +179,7 @@ body {
   color: #f2f2f2;
 }
 .footer h5 {
-  padding: 2rem;
+  padding: 0.5rem;
 }
 .header,
 .footer {
@@ -207,12 +207,6 @@ body {
   .oc {
     width: 32px;
     height: 32px;
-  }
-}
-@media (min-width: 768px) {
-  .oc {
-    width: 64px;
-    height: 64px;
   }
 }
 .body-content {
