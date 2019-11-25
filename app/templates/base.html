@@ -3,20 +3,21 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="/css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" />
     {% if title %}
-    <title>#!/𝝺/{{user.username}}/{{ title }}</title>
+        <title>#!/𝝺/{{user.username}}/{{ title }}</title>
     {% else %}
-    <title>#!/𝝺/welcome</title>
+        <title>#!/𝝺/welcome</title>
     {% endif %}
 </head>
 <body>
     <div class="header">
-        <img class="oc" src="images/octocat.png" />
+        <img class="oc" src="{{ url_for('static', filename='images/octocat.png') }}" />
         <nav id="nav-bar"></nav>
     </div>    
-    {% block content %}{% endblock %}
-	
+    <div class="body-content">
+        {% block content %}{% endblock %}
+    </div>
 </body>
-<script src="/script"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
 </html>
