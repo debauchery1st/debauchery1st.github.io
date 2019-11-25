@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content%}
+    <h1 id="subject">Hi, {{ user.username }}</h1>
+    <div id="matter">
+        {% if links %}
+        <ul>
+    {% for link in links %}
+        {% if link.url|length > 0 %}
+            <li><a href="{{ link.url }}">{{ link.text }}</a></li>
+        {% else %}
+            {% autoescape false %}
+                {{ link.text }}
+            {% endautoescape %}
+        {% endif %}
+    {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+{% endblock %}
