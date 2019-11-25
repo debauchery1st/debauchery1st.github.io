@@ -11,9 +11,20 @@ function displayParagraph(text) {
     document.getElementById("matter").innerHTML = `<p>${text}</p>`;
 }
 
+function addParagraph(text) {
+    document.getElementById("matter").innerHTML += `<p>${text}</p>`;
+}
+
+function appendHTML(text) {
+    document.getElementById("matter").innerHTML += text;
+}
+function insertHTML(text) {
+    document.getElementById("matter").innerHTML = text + document.getElementById("matter").innerHTML;
+}
+
 function meow() {
     displaySubject("meOw");
-    displayHTML('<p style="font-size:5rem;">🐈</p>');
+    insertHTML('<p style="font-size:2rem;">🐈</p>');
 }
 
 function thatBox(){
@@ -47,41 +58,41 @@ function ulFromUrls(arr){
     return ["<ul>", arr.map((li) => wrapItem(buildUrl(li[0], li[1]), "li")).join("\n"), "</ul>"].join("");
 }
 
-function notesOnCode() {
-    displaySubject(".learn");
-    displayHTML(ulFromUrls([
-        ["https://www.python.org/", "[Python]"],
-        ["learn/Learn Python The Hard Way, 3rd Edition .pdf", ". Learn Python The Hard Way"],
-        ["https://realpython.com/list-comprehension-python/", ". Python - (list comprehension)"],
-        ["https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world", ". Python - (flask mega tutorial)"], 
-        ["https://kivy.org/",". Python - (kivy GUI for RAD)"],
-        ["learn/PythonNotesForProfessionals.pdf", ". Python - (notes)"],
-        ["javascript:notesOnCode();", ""],
-        ["https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript", "[Javascript]"],
-        ["https://developer.mozilla.org/en-US/docs/Web/JavaScript", ". Javascript - (MDN)"],
-        ["learn/JavaScriptNotesForProfessionals.pdf", ". Javascript - (notes)"],
-        ["learn/NodeJSNotesForProfessionals.pdf", ". NodeJS - (notes)"],
-        ["javascript:notesOnCode();", ""],
-        ["https://whatwg.org/", "[HTML]"],
-        ["https://developer.mozilla.org/en-US/docs/Web/HTML",". HTML - (MDN)"],
-        ["learn/HTML5NotesForProfessionals.pdf", ". HTML5 - (notes)"],
-        ["javascript:notesOnCode();", ""],
-        ["https://www.w3.org/Style/CSS/", "[CSS]"],
-        ["https://developer.mozilla.org/en-US/docs/Web/CSS", ". CSS - (MDN)"],
-        ["https://css-tricks.com/guides/",". CSS guides - (css-tricks)"],
-        ["javascript:notesOnCode();", ""],
-        ["http://www-formal.stanford.edu/jmc/recursive.pdf", "[LISP]"],
-        ["http://www.lisperati.com/casting.html",". Casting SPELs in LISP"],
-        ["https://clojure.org/guides/getting_started", ". Clojure"],
-        ["https://www.haskell.org/", ". Haskell"],
-        ["https://www.erlang.org/", ". Erlang"]
+// function notesOnCode() {
+//     displaySubject(".learn");
+//     displayHTML(ulFromUrls([
+//         ["https://www.python.org/", "[Python]"],
+//         ["learn/Learn Python The Hard Way, 3rd Edition .pdf", ". Learn Python The Hard Way"],
+//         ["https://realpython.com/list-comprehension-python/", ". Python - (list comprehension)"],
+//         ["https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world", ". Python - (flask mega tutorial)"], 
+//         ["https://kivy.org/",". Python - (kivy GUI for RAD)"],
+//         ["learn/PythonNotesForProfessionals.pdf", ". Python - (notes)"],
+//         ["javascript:notesOnCode();", ""],
+//         ["https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript", "[Javascript]"],
+//         ["https://developer.mozilla.org/en-US/docs/Web/JavaScript", ". Javascript - (MDN)"],
+//         ["learn/JavaScriptNotesForProfessionals.pdf", ". Javascript - (notes)"],
+//         ["learn/NodeJSNotesForProfessionals.pdf", ". NodeJS - (notes)"],
+//         ["javascript:notesOnCode();", ""],
+//         ["https://whatwg.org/", "[HTML]"],
+//         ["https://developer.mozilla.org/en-US/docs/Web/HTML",". HTML - (MDN)"],
+//         ["learn/HTML5NotesForProfessionals.pdf", ". HTML5 - (notes)"],
+//         ["javascript:notesOnCode();", ""],
+//         ["https://www.w3.org/Style/CSS/", "[CSS]"],
+//         ["https://developer.mozilla.org/en-US/docs/Web/CSS", ". CSS - (MDN)"],
+//         ["https://css-tricks.com/guides/",". CSS guides - (css-tricks)"],
+//         ["javascript:notesOnCode();", ""],
+//         ["http://www-formal.stanford.edu/jmc/recursive.pdf", "[LISP]"],
+//         ["http://www.lisperati.com/casting.html",". Casting SPELs in LISP"],
+//         ["https://clojure.org/guides/getting_started", ". Clojure"],
+//         ["https://www.haskell.org/", ". Haskell"],
+//         ["https://www.erlang.org/", ". Erlang"]
 
-    ]));
-}
+//     ]));
+// }
 
 function run() {
-    addMenuItem("javascript:clearScreen();", "#!/𝝺 ");
-    addMenuItem("javascript:notesOnCode();", ".learn");
-    // addMenuItem("javascript:thatBox();", ".thatBox");
-    // addMenuItem("javascript:meow();", ".meow");
+    addMenuItem("", "#!/𝝺 ");
+    // addMenuItem("javascript:notesOnCode();", ".learn");
+    addMenuItem("javascript:thatBox();", ".thatBox");
+    addMenuItem("javascript:meow();", ".meow");
 }
