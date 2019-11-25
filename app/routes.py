@@ -4,7 +4,11 @@ from app import app
 @app.route("/")
 @app.route("/index")
 def index():
-    user = {"username":"trevor"}
+    user = {
+        "username":"trevor", 
+        "background": "/static/images/becca-romine-Lll4QeybDEg-unsplash.jpg",
+        "audio": {"hover":"/static/audio/select.wav"},
+        }
     links = [
         {'url': "https://www.python.org/", 'text':"[Python]"},
         {'url': "static/learn/Learn Python The Hard Way, 3rd Edition .pdf", 'text': ". Learn Python The Hard Way"},
@@ -26,7 +30,7 @@ def index():
         {'url': "https://developer.mozilla.org/en-US/docs/Web/CSS", 'text': ". CSS - (MDN)"},
         {'url': "https://css-tricks.com/guides/",'text': ". CSS guides - (css-tricks)"},
         {'url': "", 'text': "<br />"},
-        {'url': "http://www-formal.stanford.edu/jmc/recursive.pdf", 'text': "[LISP]"},
+        {'url': "http://www-formal.stanford.edu/jmc/recursive.pdf", 'text': "(LISP)"},
         {'url': "http://www.lisperati.com/casting.html", 'text': ". Casting SPELs in LISP"},
         {'url': "https://clojure.org/guides/getting_started", 'text': ". Clojure"},
         {'url': "https://www.haskell.org/", 'text': ". Haskell"},
