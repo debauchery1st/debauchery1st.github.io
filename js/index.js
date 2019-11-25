@@ -34,8 +34,23 @@ function clearScreen(){
     displaySubject("");
     displayHTML("");    
 }
+
+function notesOnCode() {
+    displaySubject(".code");
+    displayHTML(" \
+        <ul> \
+        <li><a href=\"learn/JavaScriptNotesForProfessionals.pdf\">Javascript Notes</a></li> \
+        <li><a href=\"learn/HTML5NotesForProfessionals.pdf\">HTML5 Notes</a></li> \
+        <li><a href=\"learn/NodeJSNotesForProfessionals.pdf\">NodeJS Notes</a></li> \
+        <li><a href=\"learn/Learn Python The Hard Way, 3rd Edition .pdf\">Learn Python The Hard Way (3rd edition)</a>\n \
+        <li><a href=\"learn/PythonNotesForProfessionals.pdf\">Python Notes</a></li>  \
+        </ul> \
+    ");
+}
+
 function run() {
     addMenuItem("javascript:clearScreen();", "#!/𝝺 ");
     addMenuItem("javascript:thatBox();", ".thatBox");
     addMenuItem("javascript:meow();", ".meow");
+    addMenuItem("javascript:notesOnCode();", ".code")
 }
