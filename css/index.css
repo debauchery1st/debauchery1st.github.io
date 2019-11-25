@@ -250,18 +250,18 @@ h1 {
 h2 {
   color: #f2f2f2;
 }
-p {
+.matter {
   padding: 1rem 0;
 }
 @media (min-width: 375px) {
-  p {
+  .matter {
     font-size: 1.4rem;
     line-height: 1.6rem;
     padding: 1rem 0;
   }
 }
 @media (min-width: 768px) {
-  p {
+  .matter {
     font-size: 1.6rem;
     line-height: 1.8rem;
   }
