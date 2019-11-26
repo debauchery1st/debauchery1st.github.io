@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content%}
-    <h1 id="subject">Hi, {{ user.username }}</h1>
+    <h1 id="subject">Hi, {{ current_user.username }}</h1>
     <div id="matter">
         {% if links %}
         <ul>
