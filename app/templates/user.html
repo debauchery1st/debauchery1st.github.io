@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section class="profile-head">
+        <img src="{{ user.avatar() }}" width="64px">
+        <h1>User: {{ user.username }}</h1>
+    </section>
+    <hr>
+    {% for post in posts %}
+    <section class="user-post">
+        <img src="{{ post.author.avatar() }}" width="32px">
+        <p class="user-posted">{{ post.author.username }} says: <b>{{ post.body }}</b>
+    </section>
+    {% endfor %}
+{% endblock %}

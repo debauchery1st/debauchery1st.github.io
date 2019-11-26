@@ -60,6 +60,6 @@ function ulFromUrls(arr){
 
 function run() {
     // addMenuItem("", "#!/𝝺 ");
-    addMenuItem("javascript:thatBox();", ".thatBox");
-    addMenuItem("javascript:meow();", ".meow");
+    // addMenuItem("javascript:thatBox();", ".thatBox");
+    // addMenuItem("javascript:meow();", ".meow");
 }
