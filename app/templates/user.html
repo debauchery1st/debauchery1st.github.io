@@ -2,14 +2,18 @@
 
 {% block content %}
     <section class="profile-head">
-        <img src="{{ user.avatar() }}" width="64px">
-        <h1>User: {{ user.username }}</h1>
+        <img src="{{ user.avatar() }}" width="96px">
+        <div class="profile-neck">
+            <h1>{{ user.username }}</h1>
+            {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
+            {% if user.last_seen %}<p>Last seen on: {{ user.last_seen }}</p>{% endif %}
+            {% if user == current_user %}
+            <a href="{{ url_for('edit_profile') }}">Edit your profile</a>
+            {% endif %}
+        </div>
     </section>
     <hr>
     {% for post in posts %}
-    <section class="user-post">
-        <img src="{{ post.author.avatar() }}" width="32px">
-        <p class="user-posted">{{ post.author.username }} says: <b>{{ post.body }}</b>
-    </section>
+        {% include "_post.html" %}
     {% endfor %}
 {% endblock %}

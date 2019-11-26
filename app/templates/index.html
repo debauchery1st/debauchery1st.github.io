@@ -4,15 +4,15 @@
     <div id="matter">
         {% if links %}
         <ul>
-    {% for link in links %}
-        {% if link.url|length > 0 %}
-            <li><a href="{{ link.url }}">{{ link.text }}</a></li>
-        {% else %}
-            {% autoescape false %}
-                {{ link.text }}
-            {% endautoescape %}
-        {% endif %}
-    {% endfor %}
+            {% for link in links %}
+                {% if link.url|length > 0 %}
+                    <li><a href="{{ link.url }}">{{ link.text }}</a></li>
+                {% else %}
+                    {% autoescape false %}
+                        {{ link.text }}
+                    {% endautoescape %}
+                {% endif %}
+            {% endfor %}
         </ul>
         {% endif %}
     </div>

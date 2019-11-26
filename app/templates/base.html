@@ -10,9 +10,13 @@
         <title>#!/𝝺/welcome</title>
     {% endif %}
 </head>
-<body onload="run();">
+<body>
     <div class="header">
-        <img class="oc" src="{{ url_for('static', filename='images/octocat.png') }}" />
+        {% if current_user.is_anonymous %}
+            <img class="oc" src="{{ url_for('static', filename='images/octocat.png') }}" />
+        {% else %}
+            <img class="oc" src="{{ current_user.avatar() }}" />
+        {% endif %}
         <nav id="nav-bar">
             <a href="{{ url_for('index') }}">Home</a>
             {% if current_user.is_anonymous %}
@@ -37,6 +41,7 @@
         {% endwith %}
         {% block content %}{% endblock %}
     </div>
+
 </body>
 <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
 </html>
