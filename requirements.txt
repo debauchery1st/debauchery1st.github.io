@@ -4,3 +4,4 @@ Flask-WTF
 WTForms
 python-dotenv
 flask-migrate
+flask-login
