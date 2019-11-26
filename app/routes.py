@@ -6,7 +6,7 @@ from app import app
 def index():
     user = {
         "username":"trevor", 
-        "background": "/static/images/becca-romine-Lll4QeybDEg-unsplash.jpg",
+        "splash": "/static/images/becca-romine-Lll4QeybDEg-unsplash.jpg",
         "audio": {"hover":"/static/audio/select.wav"},
         }
     links = [
