@@ -5,3 +5,5 @@ WTForms
 python-dotenv
 flask-migrate
 flask-login
+flask-mail
+pyjwt
