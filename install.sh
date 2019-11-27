@@ -10,5 +10,6 @@ pip install wheel
 echo " ** installing requirements **"
 pip install -r requirements.txt
 
-echo " ** starting application **"
-flask run
+deactivate
+#echo " ** starting application **"
+#flask run
