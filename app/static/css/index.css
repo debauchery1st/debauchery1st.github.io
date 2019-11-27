@@ -325,3 +325,20 @@ a {
   display: flex;
   justify-content: space-between;
 }
+/* 
+    flask-moment is primarily intended for use with bootstrap.
+
+    it generates something that looks like this:
+        <span class="flask-moment"
+              data-timestamp="2019-11-27T16:28:25Z" 
+              data-format="format('LLL')" 
+              data-refresh="0" 
+              style="display: flex;">2019-11-27T16:28:25Z</span>
+
+    I apply my own style in vanilla css.
+*/
+.flask-moment {
+  display: flex !important;
+  font-size: 1rem;
+  font-style: italic;
+}

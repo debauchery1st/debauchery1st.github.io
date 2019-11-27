@@ -58,7 +58,30 @@ function ulFromUrls(arr){
     return ["<ul>", arr.map((li) => wrapItem(buildUrl(li[0], li[1]), "li")).join("\n"), "</ul>"].join("");
 }
 
+
+function flaskMoments(){
+    function getUTC(mts){
+        mts.isUTC = true;
+        return mts;
+    }
+    function parseAttr(itemName, attrs) {
+        return attrs
+    }
+    function toLocalTime(el, arr){
+        el.innerText = moment(
+            el.attributes.getNamedItem('data-timestamp').value)
+            .format(el.attributes.getNamedItem('data-format').value.split("'")[1]);
+        }
+        Array(...document.getElementsByClassName("flask-moment")).map(toLocalTime);
+    }
+    // let ts = parseAttr('data-timestamp', el.attributes);
+    // let fmt = parseAttr('data-format', el.attributes);
+    // let t = getUTC(moment(ts));
+    // el.innerText = t.format(fmt);
+
 function run() {
+    flaskMoments(); // run immediately
+    var localTimeConversion = setInterval(flaskMoments, 10000); // run again every 10 seconds
     // addMenuItem("", "#!/𝝺 ");
     // addMenuItem("javascript:thatBox();", ".thatBox");
     // addMenuItem("javascript:meow();", ".meow");
