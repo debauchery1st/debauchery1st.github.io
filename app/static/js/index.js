@@ -60,29 +60,21 @@ function ulFromUrls(arr){
 
 
 function flaskMoments(){
-    function getUTC(mts){
-        mts.isUTC = true;
-        return mts;
-    }
-    function parseAttr(itemName, attrs) {
-        return attrs
-    }
     function toLocalTime(el, arr){
         el.innerText = moment(
             el.attributes.getNamedItem('data-timestamp').value)
             .format(el.attributes.getNamedItem('data-format').value.split("'")[1]);
-        }
-        Array(...document.getElementsByClassName("flask-moment")).map(toLocalTime);
     }
-    // let ts = parseAttr('data-timestamp', el.attributes);
-    // let fmt = parseAttr('data-format', el.attributes);
-    // let t = getUTC(moment(ts));
-    // el.innerText = t.format(fmt);
+    Array(...document.getElementsByClassName("flask-moment")).map(toLocalTime);
+}
+
+function exampleMenu(){
+    addMenuItem("", "#!/𝝺 ");
+    addMenuItem("javascript:thatBox();", ".thatBox");
+    addMenuItem("javascript:meow();", ".meow");
+}
 
 function run() {
     flaskMoments(); // run immediately
     var localTimeConversion = setInterval(flaskMoments, 10000); // run again every 10 seconds
-    // addMenuItem("", "#!/𝝺 ");
-    // addMenuItem("javascript:thatBox();", ".thatBox");
-    // addMenuItem("javascript:meow();", ".meow");
 }
