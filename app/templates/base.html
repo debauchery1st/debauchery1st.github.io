@@ -13,12 +13,13 @@
 <body>
     <div class="header">
         {% if current_user.is_anonymous %}
-            <img class="oc" src="{{ url_for('static', filename='images/octocat.png') }}" />
+            <img class="oc" src="https://avatars.dicebear.com/v2/jdenticon/c6b77e1f09d30ce103741f3174a7a68d.svg" />
         {% else %}
             <img class="oc" src="{{ current_user.avatar() }}" />
         {% endif %}
         <nav id="nav-bar">
             <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('explore') }}">Explore</a>
             {% if current_user.is_anonymous %}
             <a href="{{ url_for('login') }}">Login</a>
             {% else %}

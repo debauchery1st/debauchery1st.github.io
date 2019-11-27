@@ -2,7 +2,7 @@ from datetime import datetime
 from hashlib import md5
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
-from app import db, login
+from app import db, login, app
 from .utils import avatar_dicebear, avatar_robohash
 
 followers = db.Table(
@@ -59,6 +59,12 @@ class User(UserMixin, db.Model):
         own = Post.query.filter_by(user_id=self.id)
         return followed.union(own).order_by(Post.timestamp.desc())
 
+    @classmethod 
+    def default_avatar(*args, **kwargs):
+        digest = md5(app.config['ANONYMOUS_SEED'].encode('utf-8')).hexdigest()
+        return avatar_dicebear("jdenticon", digest)
+
+
 @login.user_loader
 def load_user(id):
     return User.query.get(int(id))
@@ -69,6 +75,6 @@ class Post(db.Model):
     body = db.Column(db.String(140))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-
+    
     def __repr__(self):
         return '<Post {}>'.format(self.body)

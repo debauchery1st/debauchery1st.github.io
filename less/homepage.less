@@ -96,14 +96,14 @@ a {
     font-style: italic;
 }
 
-#about_me, #username, #password, #password2, #submit, #remember_me, #email {
+#about_me, #post, #username, #password, #password2, #submit, #remember_me, #email {
     align-content: right;
     border-radius: 5px;
     color: @white;
     background-color:@transparent;
 }
 
-#about_me, #username {
+#about_me, #username, #post {
     max-width: 90%;
 }
 
@@ -128,4 +128,10 @@ a {
     display: flex;
     flex-wrap: wrap;
 
+}
+
+.paginator {
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between;
 }

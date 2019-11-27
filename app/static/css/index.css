@@ -283,6 +283,7 @@ a {
   font-style: italic;
 }
 #about_me,
+#post,
 #username,
 #password,
 #password2,
@@ -295,7 +296,8 @@ a {
   background-color: rgba(0, 0, 0, 0);
 }
 #about_me,
-#username {
+#username,
+#post {
   max-width: 90%;
 }
 #submit {
@@ -317,4 +319,9 @@ a {
 .profile-neck {
   display: flex;
   flex-wrap: wrap;
+}
+.paginator {
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
