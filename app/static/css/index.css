@@ -1,9 +1,16 @@
 @font-face {
-  font-family: 'Calistoga';
+  font-family: 'Fira Code';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local('Calistoga Regular'), local('Calistoga-Regular'), url(https://fonts.gstatic.com/s/calistoga/v1/6NUU8F2OJg6MeR7l4e0fs8wE.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/firacode/v7/uU9eCBsR6Z2vfE9aq3bL0fxyUs4tcw4W_D1sJVD7Mw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v14/JTUSjIg1_i6t8kCHKm459Wlhzg.ttf) format('truetype');
 }
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -137,11 +144,8 @@ table {
   box-sizing: border-box;
 }
 html {
+  font-family: 'Fira Code', monospace;
   font-size: 62.5%;
-}
-html,
-body {
-  font-family: 'sans-serif';
 }
 a {
   color: #f2f2f2;
