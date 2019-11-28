@@ -18,13 +18,13 @@
             <img class="oc" src="{{ current_user.avatar() }}" />
         {% endif %}
         <nav id="nav-bar">
-            <a href="{{ url_for('index') }}">Home</a>
-            <a href="{{ url_for('explore') }}">Explore</a>
+            <a href="javascript:clickUrl('{{ url_for('index') }}', 0);">#!/𝝺</a>
             {% if current_user.is_anonymous %}
-            <a href="{{ url_for('login') }}">Login</a>
+            <a href="javascript:clickUrl('{{ url_for('login') }}', 1);">Login</a>
             {% else %}
-            <a href="{{ url_for('user', username=current_user.username) }}">Profile</a>
-            <a href="{{ url_for('logout') }}">Logout</a>
+            <a href="javascript:clickUrl('{{ url_for('explore') }}', 2);">Explore</a>
+            <a href="javascript:clickUrl('{{ url_for('user', username=current_user.username) }}', 3);">Profile</a>
+            <a href="javascript:clickUrl('{{ url_for('logout') }}', 4);">Logout</a>
             {% endif %}
         </nav>
     </div>    
