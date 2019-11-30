@@ -4,7 +4,7 @@ from datetime import datetime
 from hashlib import md5
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
-from app import db, login, app
+from app import db, login
 from .utils import avatar_dicebear, avatar_robohash
 
 followers = db.Table(

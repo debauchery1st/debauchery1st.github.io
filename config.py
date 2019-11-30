@@ -1,5 +1,9 @@
 import os
+from dotenv import load_dotenv
+
 basedir = os.path.abspath(os.path.dirname(__file__))
+load_dotenv(os.path.join(basedir, '.env'))
+
 
 class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'not-really-secret'
@@ -14,5 +18,5 @@ class Config(object):
     ADMINS = ['trevor.j.martin@gmail.com']
     LANGUAGES = ['en', 'es']
     MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')
-    ANONYMOUS_SEED = '𝝺'
     POSTS_PER_PAGE = 25
+    ANONYMOUS_SEED = os.environ.get('ANONYMOUS_SEED') or '𝝺'

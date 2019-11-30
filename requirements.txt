@@ -9,5 +9,6 @@ flask-mail
 pyjwt
 flask-moment
 flask-babel
+PyEnchant
 guess_language-spirit
 requests
