@@ -1,13 +1,21 @@
 # debauchery1st.github.io
+
 github pages & microblog
 
+requires Python3 <https://www.python.org/>
 
-## install
+.
 
-	python3 -m venv venv
+## 1. install the app
 
-	source venv/bin/activate
+ ./install.sh
 
-	pip install -r requirements.txt
+## 2. create the database
 
-	flask run
+ ./develop.sh db upgrade
+
+## 3. run
+
+ ./develop.sh run
+
+then open a browser to <http://127.0.0.1:5000>
