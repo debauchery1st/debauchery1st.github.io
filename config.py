@@ -13,5 +13,6 @@ class Config(object):
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = ['trevor.j.martin@gmail.com']
     LANGUAGES = ['en', 'es']
+    MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')
     ANONYMOUS_SEED = '𝝺'
     POSTS_PER_PAGE = 25

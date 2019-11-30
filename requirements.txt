@@ -9,3 +9,5 @@ flask-mail
 pyjwt
 flask-moment
 flask-babel
+guess_language-spirit
+requests

@@ -43,9 +43,7 @@
         {% block content %}{% endblock %}
     </div>
 </body>
-<script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
-<script src="{{ url_for('static', filename='js/moment.js') }}"></script>
-<script>
-    moment().format();
-</script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/moment.js') }}"></script>
+    {{ moment.lang(g.locale) }}
 </html>
