@@ -59,13 +59,22 @@ function ulFromUrls(arr){
 }
 
 
-function flaskMoments(){
-    function toLocalTime(el, arr){
-        el.innerText = moment(
-            el.attributes.getNamedItem('data-timestamp').value)
-            .format(el.attributes.getNamedItem('data-format').value.split("'")[1]);
+function flaskMoments() {
+    /*
+        convert UTC timestamps to local human format
+        https://github.com/miguelgrinberg/Flask-Moment
+        https://momentjs.com/
+    */
+    function toLocalTime(el, fmt){
+        return moment(el.attributes.getNamedItem('data-timestamp').value).format(fmt);
     }
-    Array(...document.getElementsByClassName("flask-moment")).map(toLocalTime);
+    function toLocalDelta(el) {
+        return moment(el.attributes.getNamedItem('data-timestamp').value).fromNow();
+    }
+    function prettyTime(el, tsFormat=(()=>el.attributes.getNamedItem('data-format').value)) {
+        el.innerText = (tsFormat() == "fromNow(0)") ? toLocalDelta(el):toLocalTime(el, tsFormat().split("'")[1])
+    }
+    Array(...document.getElementsByClassName("flask-moment")).forEach((el) => prettyTime(el));
 }
 
 function uFixUp() {
@@ -98,7 +107,7 @@ function uFixUp() {
 
 function exampleMenu(){
     // href="javascript:sndCoin.play().then(console.log('ok'));"
-    addMenuItem("javascript:clickUrl('', 0);", "#!/𝝺 ");
+    addMenuItem("javascript:sndCoin.play();", "#!/𝝺 ");
     addMenuItem("javascript:thatBox();", ".thatBox");
     addMenuItem("javascript:meow();", ".meow");
 }
@@ -117,6 +126,7 @@ if (!sndSelect){
     var sndKey = new Audio('/static/audio/key01.wav');
     var sndSelect2 = new Audio('/static/audio/select02.wav');
     var sndJump = new Audio('/static/audio/jump01.wav');
+    var playNext = new Array();
 }
 
 
@@ -125,14 +135,15 @@ function loadUrl(newLocation) {
     return false;
 }
 
-function sleep(milliseconds) {
-    return new Promise(resolve => setTimeout(resolve, milliseconds));
-}
-
 function soundClick(n=0){
     return [sndCoin, sndJump, sndKey, sndSelect, sndSelect2][Math.min(n, 4)];
 }
 
 function clickUrl(url, n=0, delay=700){
-    soundClick(n).play().then(() => sleep(delay).then(() => loadUrl(url)));
+    // function sleep(milliseconds) {
+    //     return new Promise(resolve => setTimeout(resolve, milliseconds));
+    // }
+    // loadUrl(url).then(()=> soundClick(n).play());
+    // soundClick(n).play().then(() => sleep(delay).then(() => loadUrl(url)));
+    loadUrl(url);
 }
