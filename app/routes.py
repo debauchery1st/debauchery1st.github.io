@@ -161,5 +161,5 @@ def unfollow(username):
         return redirect(url_for('user', username=username))
     current_user.unfollow(user)
     db.session.commit()
-    flash('You are no longer following %(username)s.', username=username)
+    flash(_('You are no longer following %(username)s', username=username))
     return redirect(url_for('user', username=username))
