@@ -7,7 +7,7 @@
         said - {{ moment(post.timestamp).fromNow() }}
         <br>
         <span id="post{{ post.id }}">{{ post.body }}</span>
-        {% if post.language and post.language != g.locale %}
+        <!-- {% if post.language and post.language != g.locale %} -->
         <span id="translation{{ post.id }}">
             <a href="javascript:translate(
                 '#post{{ post.id }}',
@@ -15,7 +15,7 @@
                 '{{ post.language }}',
                 '{{ g.locale }}');">{{ _('Translate') }}</a>
         </span>
-        {% endif %}
+        <!-- {% endif %} -->
         <br>
     </p>
 </section>
