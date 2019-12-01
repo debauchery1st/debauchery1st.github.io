@@ -12,3 +12,4 @@ flask-babel
 PyEnchant
 guess_language-spirit
 requests
+elasticsearch
