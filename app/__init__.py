@@ -29,7 +29,7 @@ def create_app(config_class=Config):
 
     # handlers
     db.init_app(app)
-    migrate.init_app(app)
+    migrate.init_app(app, db)
     login.init_app(app)
     mail.init_app(app)
     moment.init_app(app)

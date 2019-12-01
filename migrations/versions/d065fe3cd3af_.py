@@ -1,4 +1,4 @@
-"""empty message
+"""user profile
 
 Revision ID: d065fe3cd3af
 Revises: 214fb91902ab
