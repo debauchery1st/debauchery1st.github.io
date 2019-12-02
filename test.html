@@ -1,0 +1,90 @@
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="app/static/css/index.css" />
+        
+            <title>#!/𝝺/Home</title>
+        
+    </head>
+    <body onload="run();">
+        <div class="header">
+            
+                <img class="oc" src="https://avatars.dicebear.com/v2/jdenticon/61f0f3b1e37ae2ae7133.svg" />
+            
+            <nav id="nav-bar">
+                
+                <form class="nav-bar-search" method="get" action="/search">
+                    <a href="javascript:clickUrl('/index', 0);">#!/𝝺</a>
+                    <a href="javascript:clickUrl('/explore', 2);">Explore</a>
+                    <input class="form-control" id="q" name="q" placeholder="Search" required size="20" type="text" value="">
+                    <a href="javascript:clickUrl('/user/trevor', 3);">Profile</a>
+                    <a href="javascript:clickUrl('/auth/logout', 4);">Logout</a>
+                </form>                
+                
+            </nav>
+        </div>    
+        <div class="body-content">
+            
+            
+            
+            
+        <h1 id="subject">Hi, trevor</h1>
+        
+        <form action="" method="post">
+            <input id="csrf_token" name="csrf_token" type="hidden" value="Ijk4MmRlOTg0M2U1MDllZGFhNTdkNmY2ZDVmY2M4MDUyZDZiZTc4ZmEi.XeRiXw.dylvs97JXL7cmpbP3W9dOGaYnlE">
+            <p><label for="post">Say something</label><br>
+                <textarea cols="32" id="post" name="post" required rows="4"></textarea><br>
+                
+            </p>
+            <p><input id="submit" name="submit" type="submit" value="Submit"></p>
+        </form>
+        
+        <div id="matter">
+            
+            <ul>
+                
+                    <section class="user-post">
+        <img src="https://avatars.dicebear.com/v2/jdenticon/61f0f3b1e37ae2ae7133.svg" width="32px">
+        <p class="user-posted">
+            <a href="/user/trevor">
+            trevor
+            </a>
+            said - <span class="flask-moment" data-timestamp="2019-12-01T22:13:45Z" data-format="fromNow(0)" data-refresh="0" style="display: none">2019-12-01T22:13:45Z</span>
+            <br>
+            <span id="post2">test server</span>
+            
+            <br>
+        </p>
+    </section>
+                
+                    <section class="user-post">
+        <img src="https://avatars.dicebear.com/v2/jdenticon/61f0f3b1e37ae2ae7133.svg" width="32px">
+        <p class="user-posted">
+            <a href="/user/trevor">
+            trevor
+            </a>
+            said - <span class="flask-moment" data-timestamp="2019-12-01T20:12:24Z" data-format="fromNow(0)" data-refresh="0" style="display: none">2019-12-01T20:12:24Z</span>
+            <br>
+            <span id="post1">welcome to debloggery</span>
+            
+            <br>
+        </p>
+    </section>
+                
+            </ul>
+            
+            
+    
+        </div>
+    
+        </div>
+    </body>
+        <script type="text/javascript" src="app/static/js/index.js"></script>
+        <script src="app/static/js/moment.js"></script>
+        <script>
+    moment.locale("en");
+    </script>
+    </html>
