@@ -15,19 +15,25 @@
         {% if current_user.is_anonymous %}
             <img class="oc" src="https://avatars.dicebear.com/v2/jdenticon/c6b77e1f09d30ce103741f3174a7a68d.svg" />
         {% else %}
-            <img class="oc" src="{{ current_user.avatar() }}" />
+        <a href="javascript:clickUrl('{{ url_for('main.user', username=current_user.username) }}', 3);" alt="Profile"><img class="oc" src="{{ current_user.avatar() }}" /></a>
         {% endif %}
         <nav id="nav-bar">
-            <a href="javascript:clickUrl('{{ url_for('main.index') }}', 0);">#!/𝝺</a>
             {% if current_user.is_anonymous %}
-            <a href="javascript:clickUrl('{{ url_for('auth.login') }}', 1);">Login</a>
+              <a href="javascript:clickUrl('{{ url_for('auth.login') }}', 1);">Login</a>
             {% else %}
-            <a href="javascript:clickUrl('{{ url_for('main.explore') }}', 2);">Explore</a>
-            {% if g.search_form %}
-            <form class="nav-bar-search" method="get" action="{{ url_for('main.search') }}">{{ g.search_form.q(size=20,class='form-control', placeholder=g.search_form.q.label.text) }}</form>
-            {% endif %}
-            <a href="javascript:clickUrl('{{ url_for('main.user', username=current_user.username) }}', 3);">Profile</a>
-            <a href="javascript:clickUrl('{{ url_for('auth.logout') }}', 4);">Logout</a>
+              {% if g.search_form %}
+                <form class="nav-bar-search" method="get" action="{{ url_for('main.search') }}">
+                <a href="javascript:clickUrl('{{ url_for('main.index') }}', 0);">#!/𝝺</a>
+                <a href="javascript:clickUrl('{{ url_for('main.explore') }}', 2);">Explore</a>
+                {{ g.search_form.q(size=20,class='form-control', placeholder=g.search_form.q.label.text) }}
+                <a href="javascript:clickUrl('{{ url_for('auth.logout') }}', 4);">Logout</a>           
+                </form>
+              {% else %}
+                <a href="javascript:clickUrl('{{ url_for('main.index') }}', 0);">#!/𝝺</a>
+                <a href="javascript:clickUrl('{{ url_for('main.explore') }}', 2);">Explore</a>
+                <a href="javascript:clickUrl('{{ url_for('main.user', username=current_user.username) }}', 3);">Profile</a>
+                <a href="javascript:clickUrl('{{ url_for('auth.logout') }}', 4);">Logout</a>
+              {% endif %}
             {% endif %}
         </nav>
     </div>    
