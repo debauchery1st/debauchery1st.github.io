@@ -1,30 +1,81 @@
+//selectors
+const navbar = document.getElementById("nav-bar");
+const subject = document.getElementById("subject");
+const matter = document.getElementById("matter");
+const firstForm = () => Array(...document.getElementsByTagName('form'))[0];
+const lastForm = () => Array(...document.getElementsByTagName('form')).pop();
 
-function displaySubject(subject) {
-    document.getElementById("subject").innerText = subject;
+//setters
+
+//  mono
+const displaySubject = (text) => subject.textContent = text;
+const displayHTML = (xhtml) => matter.innerHTML = xhtml;
+
+function clearScreen(){
+    displaySubject(""); //clear H3
+    displayHTML("");  //clear matter
 }
 
-function displayHTML(matter) {
-    document.getElementById("matter").innerHTML = matter;
+const displayParagraph = (text) => {
+    displayHTML(""); // clear matter
+    const newPara = document.createElement('p'); //create
+    newPara.textContent = text;  //assign
+    matter.appendChild(newPara);  //assemble
 }
 
-function displayParagraph(text) {
-    document.getElementById("matter").innerHTML = `<p>${text}</p>`;
+const insertElement = (el) => {
+    const holdThis = [];
+    holdThis.push(matter.innerHTML);
+    displayHTML(""); // clear matter
+    matter.appendChild(el);
+    matter.innerHTML += holdThis.pop();
 }
 
-function addParagraph(text) {
-    document.getElementById("matter").innerHTML += `<p>${text}</p>`;
+const addParagraph = (text) => {
+    const newPara = document.createElement('p'); //create
+    newPara.textContent = text;  //assign
+    matter.appendChild(newPara);  //assemble
 }
 
-function appendHTML(text) {
-    document.getElementById("matter").innerHTML += text;
+const addMenuItem = (url, text) =>  {
+    const newItem = document.createElement('a');
+    newItem.href = url;
+    newItem.textContent = text;
+    navbar.appendChild(newItem);
 }
-function insertHTML(text) {
-    document.getElementById("matter").innerHTML = text + document.getElementById("matter").innerHTML;
+
+// builders
+const wrapElement = (el, str) => {
+    const outside = document.createElement(str);
+    outside.appendChild(el);
+    return outside;
+}
+
+const buildUrl = (href, text) => {
+    const newUrl = document.createElement('a');
+    newUrl.href = href;
+    newUrl.textContent = text;
+    return newUrl;
+}
+
+const ulFromUrls = (arr) => {
+    const newList = document.createElement('ul');
+    newList.appendChild(arr.map((li) => wrapElement(buildUrl(li[0], li[1]), "li")));
+    return newList;
+}
+
+const pKat = () => {
+    const catsMeow = new Audio('static/audio/Meow.ogg');
+    const cityCat = document.createElement('p');
+    cityCat.style.fontSize = "2rem";
+    cityCat.textContent = "🐈";
+    catsMeow.play();
+    return cityCat
 }
 
 function meow() {
     displaySubject("meOw");
-    insertHTML('<p style="font-size:2rem;">🐈</p>');
+    insertElement(pKat());
 }
 
 function thatBox(){
@@ -36,26 +87,6 @@ function thatBox(){
         <p>Chase laser catching very fast laser pointer so lick face hiss at owner, pee a lot, and meow repeatedly scratch at fence purrrrrr eat muffins and poutine until owner comes back really likes hummus or toilet paper attack claws fluff everywhere meow miao french ciao litterbox human is washing you why halp oh the horror flee scratch hiss bite or caticus cuteicus. Experiences short bursts of poo-phoria after going to the loo poop in litter box, scratch the walls but demand to be let outside at once, and expect owner to wait for me as i think about it ignore the squirrels, you'll never catch them anyway, sniff other cat's butt and hang jaw half open thereafter but purr while eating terrorize the hundred-and-twenty-pound rottweiler and steal his bed, not sorry. Eat too much then proceed to regurgitate all over living room carpet while humans eat dinner bring your owner a dead bird so eat and than sleep on your face but i love cuddles. Destroy the blinds curl up and sleep on the freshly laundered towels. Go into a room to decide you didn't want to be in there anyway woops poop hanging from butt must get rid run run around house drag poop on floor maybe it comes off woops left brown marks on floor human slave clean lick butt now for try to jump onto window and fall while scratching at wall and intrigued by the shower woops poop hanging from butt must get rid run run around house drag poop on floor maybe it comes off woops left brown marks on floor human slave clean lick butt now but really likes hummus cough hairball on conveniently placed pants. Scratch the furniture my cat stared at me he was sipping his tea, too kitty time and hide from vacuum cleaner. Eat too much then proceed to regurgitate all over living room carpet while humans eat dinner. Plays league of legends if it fits i sits so why must they do that, so sweet beast, and scream for no reason at 4 am. Poop on grasses yowling nonstop the whole night or curl up and sleep on the freshly laundered towels so cough furball into food bowl then scratch owner for a new one yet stare at ceiling light. Slap kitten brother with paw have secret plans yet demand to have some of whatever the human is cooking, then sniff the offering and walk away and slap kitten brother with paw. Cough hairball on conveniently placed pants eat a plant, kill a hand kitty run to human with blood on mouth from frenzied attack on poor innocent mouse, don't i look cute? for lick arm hair eat plants, meow, and throw up because i ate plants for immediately regret falling into bathtub. Poop on floor and watch human clean up lick face hiss at owner, pee a lot, and meow repeatedly scratch at fence purrrrrr eat muffins and poutine until owner comes back. Intently sniff hand spread kitty litter all over house. Love blinks and purr purr purr purr yawn lick human with sandpaper tongue and kick up litter good morning sunshine or slap the dog because cats rule litter kitter kitty litty little kitten big roar roar feed me. Stare at ceiling flee in terror at cucumber discovered on floor but munch on tasty moths yet relentlessly pursues moth and lay on arms while you're using the keyboard cough. Stare at ceiling experiences short bursts of poo-phoria after going to the loo howl on top of tall thing purr for no reason and cat slap dog in face for rub face on everything.</p>";
     displaySubject(subject);
     displayHTML(matter);
-}
-
-function addMenuItem(url, text){
-    document.getElementById("nav-bar").innerHTML += ['\n<a href="', url,'">', text, '</a>'].join("");
-}
-function clearScreen(){
-    displaySubject("");
-    displayHTML("");    
-}
-
-function wrapItem(item, tag){
-    return `<${tag}>${item}</${tag}>`;
-}
-
-function buildUrl(href, text){
-    return `<a href="${href}">${text}</a>`;
-}
-
-function ulFromUrls(arr){
-    return ["<ul>", arr.map((li) => wrapItem(buildUrl(li[0], li[1]), "li")).join("\n"), "</ul>"].join("");
 }
 
 
@@ -97,10 +128,12 @@ function uFixUp() {
             // do nothing
             return;
         }
-        // let authorName = el.innerText.slice(0, start).split(' ')[0];
-        // let authorPage = `<a href="/user/${authorName}">${authorName}</a>`
-    // el.innerHTML = `${authorPage} - <a href="${alink.url}" target="_blank">${alink.text}</a>`;
-    el.innerHTML = `<a href="${alink.url}" target="_blank">${alink.text}</a>`;
+    const newLink = document.createElement('a');
+    newLink.target = "_blank";
+    newLink.text = alink.text;
+    newLink.href = alink.url;
+    el.textContent = "";
+    el.appendChild(newLink);
     }
     Array(...document.getElementsByClassName("user-posted")).map(getJSON);
 }
@@ -121,14 +154,12 @@ function run() {
 }
 
 if (!sndSelect){
-    var sndSelect = new Audio('/static/audio/select.wav');
-    var sndCoin = new Audio('/static/audio/coin01.wav');
-    var sndKey = new Audio('/static/audio/key01.wav');
+    var sndSelect = new Audio('static/audio/select.wav');
+    var sndCoin = new Audio('static/audio/coin01.wav');
+    var sndKey = new Audio('static/audio/key01.wav');
     var sndSelect2 = new Audio('/static/audio/select02.wav');
-    var sndJump = new Audio('/static/audio/jump01.wav');
-    var playNext = new Array();
+    var sndJump = new Audio('static/audio/jump01.wav');
 }
-
 
 function loadUrl(newLocation) {
     this.location = newLocation
