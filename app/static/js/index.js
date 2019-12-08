@@ -1,5 +1,3 @@
-import "static/js/data.js";
-
 //selectors
 const navbar = document.getElementById("nav-bar");
 const subject = document.getElementById("subject");
