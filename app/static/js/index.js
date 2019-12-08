@@ -63,7 +63,9 @@ const ulFromUrls = (arr) => {
 }
 
 const pKat = () => {
-    const catsMeow = new Audio('static/audio/Meow.ogg');
+    if (!catsMeow) {
+        const catsMeow = new Audio('static/audio/Meow.ogg');
+    }
     const cityCat = document.createElement('p');
     cityCat.style.fontSize = "2rem";
     cityCat.textContent = "🐈";
