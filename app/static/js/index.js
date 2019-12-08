@@ -8,8 +8,6 @@ const firstForm = () => Array(...document.getElementsByTagName('form'))[0];
 const lastForm = () => Array(...document.getElementsByTagName('form')).pop();
 
 //setters
-
-//  mono
 const displaySubject = (text) => subject.textContent = text;
 const displayHTML = (xhtml) => matter.innerHTML = xhtml;
 
@@ -87,7 +85,6 @@ function thatBox() {
     displayHTML(matter);
 }
 
-
 function flaskMoments() {
     /*
         convert UTC timestamps to local human format
@@ -107,37 +104,30 @@ function flaskMoments() {
 }
 
 function uFixUp() {
-    // sort through the list of posts (paginated)
-    // {"url": "https://www.python.org/", "text":"[Python]"}
+    /* 
+        look for JSON objects and convert to <a>links</a> where appropriate.
+        JSON Objects must contain both "url" and "text" keyword/value pairs.
+            example {"url": "http://example.com", "text": "click here"}
+    */
     function getJSON(el){
         let arr = Array(...el.innerText);
         let start = arr.indexOf('{');
-        if (!start) {
-            // do nothing
-            return;
-        }
+        if (!start) return;
         let end = 1 + arr.indexOf('}');
-        if (!end) {
-            // do nothing
-            return;
-        }
+        if (!end) return;
         let alink = JSON.parse(el.innerText.slice(start, end));
-        if (!alink){
-            // do nothing
-            return;
-        }
-    const newLink = document.createElement('a');
-    newLink.target = "_blank";
-    newLink.text = alink.text;
-    newLink.href = alink.url;
-    el.textContent = "";
-    el.appendChild(newLink);
+        if (!alink) return;
+        const newLink = document.createElement('a');
+        newLink.target = "_blank";
+        newLink.text = alink.text;
+        newLink.href = alink.url;
+        el.textContent = "";
+        el.appendChild(newLink);
     }
     Array(...document.getElementsByClassName("user-posted")).map(getJSON);
 }
 
 function exampleMenu(){
-    // href="javascript:sndCoin.play().then(console.log('ok'));"
     addMenuItem("javascript:sndCoin.play();", "#!/𝝺 ");
     addMenuItem("javascript:thatBox();", ".thatBox");
     addMenuItem("javascript:meow();", ".meow");
@@ -166,13 +156,4 @@ function loadUrl(newLocation) {
 
 function soundClick(n=0){
     return [sndCoin, sndJump, sndKey, sndSelect, sndSelect2][Math.min(n, 4)];
-}
-
-function clickUrl(url, n=0, delay=700){
-    // function sleep(milliseconds) {
-    //     return new Promise(resolve => setTimeout(resolve, milliseconds));
-    // }
-    // loadUrl(url).then(()=> soundClick(n).play());
-    // soundClick(n).play().then(() => sleep(delay).then(() => loadUrl(url)));
-    loadUrl(url);
 }
